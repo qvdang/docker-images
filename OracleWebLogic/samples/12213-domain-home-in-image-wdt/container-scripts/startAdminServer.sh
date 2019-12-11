@@ -30,11 +30,11 @@ echo "Java Options: ${JAVA_OPTIONS}"
 DERBY_FLAG=false
 export ${DERBY_FLAG}
 
-export AS_HOME="${DOMAIN_HOME}/servers/${ADMIN_NAME}"
+export AS_HOME="${DOMAIN_HOME}/servers/${ADMIN_SERVER_NAME}"
 export AS_SECURITY="${AS_HOME}/security"
 export AS_LOGS="${AS_HOME}/logs"
 
-if [ -f ${AS_LOGS}}/${ADMIN_NAME}.log ]; then
+if [ -f ${AS_LOGS}}/${ADMIN_SERVER_NAME}.log ]; then
     exit
 fi
 
@@ -62,7 +62,7 @@ echo "password=${PASS}" >> ${AS_SECURITY}/boot.properties
 ${DOMAIN_HOME}/bin/setDomainEnv.sh
 ${DOMAIN_HOME}/startWebLogic.sh
 
-tail -f ${AS_LOGS}/${ADMIN_NAME}.log &
+tail -f ${AS_LOGS}/${ADMIN_SERVER_NAME}.log &
 
 childPID=$!
 wait $childPID
