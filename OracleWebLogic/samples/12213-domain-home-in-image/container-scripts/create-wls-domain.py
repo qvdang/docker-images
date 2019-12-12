@@ -29,7 +29,7 @@ managed_server_ssl_port       = int(os.environ.get("MANAGED_SERVER_SSL_PORT"))
 domain_path                   = os.environ.get("DOMAIN_HOME")
 cluster_name                  = CLUSTER_NAME
 print('cluster_name             : [%s]' % cluster_name);
-admin_server_name             = ADMIN_SERVER_NAME
+admin_server_name             = os.environ.get("ADMIN_SERVER_NAME")
 #admin_server_name_svc        = os.environ.get("ADMIN_SERVER_NAME_SVC")
 admin_server_port             = int(os.environ.get("ADMIN_SERVER_PORT"))
 admin_server_ssl_port         = int(os.environ.get("ADMIN_SERVER_SSL_PORT"))
